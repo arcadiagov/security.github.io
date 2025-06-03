@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcadian Intelligence Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0e0e0e;
+      color: #00ffcc;
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .crest {
+      width: 120px;
+      height: 120px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Emblem_of_the_Secret_Intelligence_Service.svg/2048px-Emblem_of_the_Secret_Intelligence_Service.svg.png') no-repeat center;
+      background-size: contain;
+      filter: drop-shadow(0 0 12px #00ffcc);
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .login-box {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="password"] {
+      background: #111;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      outline: none;
+      width: 250px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00ffcc;
+      color: #000;
+    }
+
+    .secret {
+      display: none;
+      margin-top: 40px;
+      max-width: 500px;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="crest"></div>
+  <h1>Kingdom Realm of Arcadia<br>Intelligence Access Terminal</h1>
+
+  <div class="login-box">
+    <input type="password" id="accessCode" placeholder="Enter Clearance Code" />
+    <button onclick="checkCode()">ACCESS</button>
+  </div>
+
+  <div class="secret" id="secretContent">
+    <h2>Access Granted</h2>
+    <p>Welcome, Agent.<br>This portal grants access to restricted intelligence, covert protocols, and secure communications.<br><br>Maintain operational silence.<br>Decryption keys rotate every 6 hours.</p>
+  </div>
+
+  <div class="footer">Arcadia IntelNet v3.7 &copy; 2025</div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('accessCode').value;
+      if (input === 'Arcadia42') {
+        document.getElementById('secretContent').style.display = 'block';
+      } else {
+        alert('ACCESS DENIED');
+      }
+    }
+  </script>
+
+</body>
+</html>
